@@ -1,0 +1,9 @@
+{
+  "compilerOptions": { // 编译选项
+    "target": "ES2016", // 配置编译目标代码的版本标准
+    "module": "CommonJS", // 配置编译目标代码的模块化标准
+    "lib": ["ES2016"],
+    "outDir": "./dist"
+  },
+  "include": ["./src"]
+}
