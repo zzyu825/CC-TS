@@ -1,3 +1,3 @@
 let a:string = 'ts';
 
-console.log(a);
+console.log(a); 

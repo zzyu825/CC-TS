@@ -28,3 +28,9 @@
 
 > JQuery：用js写的，没有类型检查
 > 安装@types/jquery，为jquery库添加类型定义
+
+# 使用第三方库简化流程
+
+ts-node: 将ts代码在内存中完成编译，同时完成运行
+
+nodemon: 用于检测文件的变化
