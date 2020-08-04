@@ -1,18 +1,35 @@
-type Gender = "男" | "女";
-type User = {
-    name: String,
-    gender: Gender,
-    age: Number
-}
+/**
+ * 得到a*b的结果
+ * @param a 
+ * @param b 
+ */
+function combine(a:number, b:number):number;
 
-let u:User;
-u = {
-    name: 'zzyu',
-    gender: '男',
-    age: 18
-}
+/**
+ * 得到a+b的结果
+ * @param a 
+ * @param b 
+ */
+function combine(a:string, b:string):string;
 
-function getUsers(g:Gender):User[] {
-    return [];
+function combine(a:number | string, b:number | string):number | string {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a * b;
+    } else if (typeof a === 'string' && typeof b === 'string') {
+        return a + b;
+    }
+    throw new Error('a和b必须是相同的类型');
 }
-getUsers("男");
+// combine(1, 2);
+
+// function sum(a:number, b:number, c?:number) {
+//     if (c) {
+//         return a + b + c;
+//     } else {
+//         return a + b;
+//     }
+// }
+function sum(a:number, b:number, c:number = 0) {
+    return a + b + c;
+}
+sum(3,4);
