@@ -1,35 +1,55 @@
-/**
- * 得到a*b的结果
- * @param a 
- * @param b 
- */
-function combine(a:number, b:number):number;
+type Deck = NormalCard[];
+type Color = '♥' | '♠' | '♦' | '♣';
+type NormalCard = {
+    color: Color,
+    mark: number
+}
 
-/**
- * 得到a+b的结果
- * @param a 
- * @param b 
- */
-function combine(a:string, b:string):string;
-
-function combine(a:number | string, b:number | string):number | string {
-    if (typeof a === 'number' && typeof b === 'number') {
-        return a * b;
-    } else if (typeof a === 'string' && typeof b === 'string') {
-        return a + b;
+// 创建扑克牌
+function createDeck():Deck {
+    const deck:Deck = [];
+    for (let i = 1; i <= 13; i++) {
+        deck.push({
+            color: '♠',
+            mark: i
+        });
+        deck.push({
+            color: '♣',
+            mark: i
+        });
+        deck.push({
+            color: '♥',
+            mark: i
+        });
+        deck.push({
+            color: '♦',
+            mark: i
+        });
     }
-    throw new Error('a和b必须是相同的类型');
+    return deck;
 }
-// combine(1, 2);
 
-// function sum(a:number, b:number, c?:number) {
-//     if (c) {
-//         return a + b + c;
-//     } else {
-//         return a + b;
-//     }
-// }
-function sum(a:number, b:number, c:number = 0) {
-    return a + b + c;
+// 打印扑克牌
+function printDeck(deck:Deck) {
+    let result = '\n';
+    deck.forEach((item, i) => {
+        let str = item.color;
+        if (item.mark <= 10) {
+            str += item.mark;
+        } else if (item.mark === 11) {
+            str += "J";
+        } else if (item.mark === 12) {
+            str += "Q";
+        } else {
+            str += "K";
+        }
+        result += str + '\t';
+        if ((i + 1) % 6 === 0) {
+            result += "\n";
+        }
+    });
+    console.log(result);
 }
-sum(3,4);
+
+const deck = createDeck();
+printDeck(deck);
