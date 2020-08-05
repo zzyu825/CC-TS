@@ -1,55 +1,11 @@
-type Deck = NormalCard[];
-type Color = '♥' | '♠' | '♦' | '♣';
-type NormalCard = {
-    color: Color,
-    mark: number
-}
+// type Gender = "男" | "女";
+// let gender: "男" | "女";
+let gender: "帅哥" | "美女";
+// 先生 女士 male female
 
-// 创建扑克牌
-function createDeck():Deck {
-    const deck:Deck = [];
-    for (let i = 1; i <= 13; i++) {
-        deck.push({
-            color: '♠',
-            mark: i
-        });
-        deck.push({
-            color: '♣',
-            mark: i
-        });
-        deck.push({
-            color: '♥',
-            mark: i
-        });
-        deck.push({
-            color: '♦',
-            mark: i
-        });
-    }
-    return deck;
-}
+gender = "男";
+gender = "女";
 
-// 打印扑克牌
-function printDeck(deck:Deck) {
-    let result = '\n';
-    deck.forEach((item, i) => {
-        let str = item.color;
-        if (item.mark <= 10) {
-            str += item.mark;
-        } else if (item.mark === 11) {
-            str += "J";
-        } else if (item.mark === 12) {
-            str += "Q";
-        } else {
-            str += "K";
-        }
-        result += str + '\t';
-        if ((i + 1) % 6 === 0) {
-            result += "\n";
-        }
-    });
-    console.log(result);
-}
+function searchUsers(g: "男" | "女") {
 
-const deck = createDeck();
-printDeck(deck);
+}
