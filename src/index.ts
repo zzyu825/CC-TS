@@ -1,11 +1,33 @@
-// type Gender = "男" | "女";
-// let gender: "男" | "女";
-let gender: "帅哥" | "美女";
-// 先生 女士 male female
+// enum Gender {
+//     male = '帅哥',
+//     female = '美女'
+// }
 
-gender = "男";
-gender = "女";
+// let gender: Gender;
 
-function searchUsers(g: "男" | "女") {
+// gender = Gender.male;
+// gender = Gender.female;
 
+// function printGenders() {
+//     const vals = Object.values(Gender);
+//     vals.forEach(v => console.log(v));
+// }
+
+// printGenders();
+
+// function searchUsers(g: Gender) {}
+
+// enum Level {
+//     level1 = 1,
+//     level2,
+//     level3
+// }
+enum Level {
+    level1,
+    level2,
+    level3
 }
+
+let l: Level = Level.level1;
+l = Level.level2;
+console.log(l);
