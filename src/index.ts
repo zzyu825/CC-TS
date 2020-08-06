@@ -1,33 +1,58 @@
-// enum Gender {
-//     male = '帅哥',
-//     female = '美女'
-// }
-
-// let gender: Gender;
-
-// gender = Gender.male;
-// gender = Gender.female;
-
-// function printGenders() {
-//     const vals = Object.values(Gender);
-//     vals.forEach(v => console.log(v));
-// }
-
-// printGenders();
-
-// function searchUsers(g: Gender) {}
-
-// enum Level {
-//     level1 = 1,
-//     level2,
-//     level3
-// }
-enum Level {
-    level1,
-    level2,
-    level3
+type Deck = NormalCard[];
+enum Color {
+    heart = '♥',
+    club = '♣',
+    spade = '♠',
+    diamond = '♦'
+}
+enum Mark {
+    A = 'A',
+    two = '2',
+    three = '3',
+    four = '4',
+    five = '5',
+    six = '6',
+    seven = '7',
+    eight = '8',
+    nine = '9',
+    ten = '10',
+    eleven = 'J',
+    twelve = 'Q',
+    king = 'K'
+}
+type NormalCard = {
+    color: Color,
+    mark: Mark
 }
 
-let l: Level = Level.level1;
-l = Level.level2;
-console.log(l);
+// 创建扑克牌
+function createDeck():Deck {
+    const deck:Deck = [];
+    const marks = Object.values(Mark);
+    const colors = Object.values(Color);
+    for (const m of marks) {
+        for (const c of colors) {
+            deck.push({
+                color: c,
+                mark: m
+            })
+        }
+    }
+    return deck;
+}
+
+// 打印扑克牌
+function printDeck(deck:Deck) {
+    let result = '\n';
+    deck.forEach((item, i) => {
+        let str = item.color + item.mark;
+        result += str + '\t';
+        if ((i + 1) % 6 === 0) {
+            result += "\n";
+        }
+    });
+    console.log(result);
+}
+
+const deck = createDeck();
+printDeck(deck);
