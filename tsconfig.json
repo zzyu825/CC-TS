@@ -4,7 +4,9 @@
     "module": "CommonJS", // 配置编译目标代码的模块化标准
     "lib": ["ES2016"],
     "outDir": "./dist",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "removeComments": true,
+    "noImplicitUseStrict": true
   },
   "include": ["./src"]
 }
