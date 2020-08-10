@@ -1,6 +1,9 @@
-import print, { name, sum } from "./myModule";
+// import fs from 'fs'; // module.exports={}
+// import { readFileSync } from 'fs';
+// import * as fs from 'fs';
+import fs from 'fs';
 
-console.log(name);
-console.log(sum(1, 2));
+// readFileSync('/');
+fs.readFileSync('/');
 
-console.log(print());
+let a:string = 123;

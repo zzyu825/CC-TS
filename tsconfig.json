@@ -6,7 +6,9 @@
     "outDir": "./dist",
     "strictNullChecks": true,
     "removeComments": true,
-    "noImplicitUseStrict": true
+    "noImplicitUseStrict": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true
   },
   "include": ["./src"]
 }
