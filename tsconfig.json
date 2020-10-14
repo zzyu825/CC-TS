@@ -8,7 +8,8 @@
     "removeComments": true,
     "noImplicitUseStrict": true,
     "esModuleInterop": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "moduleResolution": "node"
   },
   "include": ["./src"]
 }

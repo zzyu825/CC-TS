@@ -34,3 +34,14 @@ TS中的模块化在编译结果中：
 导出：export = xxx
 
 导入：import xxx = require("xxx")
+
+# 模块解析
+
+模块解析：应该从什么位置寻找模块
+
+TS中，有两种模块解析策略
+
+- classic：经典
+- node：node解析策略（唯一的变化，是将js替换为ts）
+  - 相对路径```require("./xxx")```
+  - 非相对模块```require("xxx")```
