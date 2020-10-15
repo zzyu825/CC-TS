@@ -1,2 +1,5 @@
-import obj = require('./myModule');
-console.log(obj.name);
+import { createDeck, printDeck } from "./deck";
+
+
+const deck = createDeck();
+printDeck(deck);
