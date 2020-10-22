@@ -9,7 +9,8 @@
     "noImplicitUseStrict": true,
     "esModuleInterop": true,
     "noEmitOnError": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictPropertyInitialization": true
   },
   "include": ["./src"]
 }
