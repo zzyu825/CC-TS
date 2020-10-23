@@ -1,35 +1,17 @@
-class User {
-  gender: "男" | "女" = "男"
-  pid?: string
-  readonly id: number
+import { Deck } from "./deck";
 
-  private _publishNumber: number = 3 // 每天可以发布的文章数量
-  private _curNumber: number = 0 // 当前可以发布的文章数量
+const deck = new Deck();
 
-  constructor(public name: string, private _age: number) {
-    this.id = Math.random();
-  }
-
-  // setAge() {}
-  // getAge() {}
-
-  set age(value: number) {
-    // 条件控制
-    this._age = value
-  }
-
-  get age() {
-    return Math.floor(this._age)
-  }
-
-  publish(title: string) {
-    if (this._curNumber < this._publishNumber) {
-      console.log("发布一篇文章：" + title);
-      this._curNumber++;
-    } else {
-      console.log("你今日发布的文章数量已达上限")
-    }
-  }
-}
-
-const u = new User('a', 18);
+deck.shuffle();
+console.log('=====洗牌之后=====')
+deck.print();
+const result = deck.publish();
+console.log('=====发牌之后=====')
+console.log('=====玩家1=====')
+result[0].print();
+console.log('=====玩家2=====')
+result[1].print();
+console.log('=====玩家3=====')
+result[2].print();
+console.log('=====桌面=====')
+result[3].print();
