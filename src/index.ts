@@ -1,17 +1,18 @@
-import { Deck } from "./deck";
+function take<T = number>(arr: T[], n: number): T[] {
+  if (n >= arr.length) {
+    return arr;
+  }
+  const newArr: T[] = [];
+  for (let i = 0; i < n; i++) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
 
-const deck = new Deck();
+// const newArr = take([2, 3, 4, 5], 2);
+// newArr.forEach(item => {
 
-deck.shuffle();
-console.log('=====洗牌之后=====')
-deck.print();
-const result = deck.publish();
-console.log('=====发牌之后=====')
-console.log('=====玩家1=====')
-result[0].print();
-console.log('=====玩家2=====')
-result[1].print();
-console.log('=====玩家3=====')
-result[2].print();
-console.log('=====桌面=====')
-result[3].print();
+// })
+
+// const newArr = take<number>([2, 3, 4, 5], 2);
+const newArr = take([2, 3, 4, 5], 2);
