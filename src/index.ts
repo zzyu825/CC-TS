@@ -1,18 +1,18 @@
-interface hasNameProperty {
-  name: string
-}
-
 /**
- * 将某个对象的name属性对应的值中，每个单词的首字母大写，然后返回该对象
- * @param obj 
+ * 将两个数组进行混合
+ * @param arr1 
+ * @param arr2 
  */
-function nameToUpperCase<T extends hasNameProperty>(obj: T): T {
-  obj.name = obj.name.split(" ").map(s => s[0].toUpperCase() + s.substr(1)).join(" ");
-  return obj;
+function mixinArray<T, K>(arr1: T[], arr2: K[]): (T | K)[] {
+  if (arr1.length !== arr2.length) {
+    throw new Error("两个数组长度不等");
+  }
+  let result: (T | K)[] = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i]);
+    result.push(arr2[i]);
+  }
+  return result;
 }
 
-const o = {
-  name: "hello ts",
-  age: 10
-}
-nameToUpperCase(o);
+mixinArray([1, 2, 3], ['a', 'b', 'c']);
