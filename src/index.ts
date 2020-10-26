@@ -1,16 +1,18 @@
-// 回调函数：判断数组中的某一项是否满足条件
-// type callback<T> = (n: T, i: number) => boolean;
-// interface callback<T> {
-//   (n: T, i: number): boolean
-// };
+interface hasNameProperty {
+  name: string
+}
 
-// import { ArrayHelper } from "./ArrayHelper";
+/**
+ * 将某个对象的name属性对应的值中，每个单词的首字母大写，然后返回该对象
+ * @param obj 
+ */
+function nameToUpperCase<T extends hasNameProperty>(obj: T): T {
+  obj.name = obj.name.split(" ").map(s => s[0].toUpperCase() + s.substr(1)).join(" ");
+  return obj;
+}
 
-// function filter<T>(arr: T[], callback: callback<T>): T[] {
-//   return arr.filter((item, i) => callback(item, i));
-// }
-
-// const arr = [1, 2, 3, 4, 5];
-// console.log(filter(arr, n => n % 2 !== 0));
-
-// const helper = new ArrayHelper([1, 2, 3]);
+const o = {
+  name: "hello ts",
+  age: 10
+}
+nameToUpperCase(o);
